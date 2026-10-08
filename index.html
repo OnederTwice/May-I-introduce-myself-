@@ -31,25 +31,35 @@
         .tab-btn.active { background-color: #1e3a8a; color: white; border-color: #1e3a8a; }
 
         /* --- โค้ดสำหรับทำ Background Slider --- */
+        /* --- โค้ดสำหรับทำ Background Slider (อัปเดตสำหรับ 11 รูป) --- */
         .slider-bg {
             position: absolute;
             inset: 0;
             background-size: cover;
             background-position: center;
             opacity: 0;
-            animation: kenburns 15s infinite;
+            /* 11 รูป รูปละ 5 วินาที = รอบละ 55 วินาที */
+            animation: kenburns 55s infinite;
         }
-        /* หน่วงเวลาให้ภาพสลับกันทีละ 5 วินาที */
+        /* หน่วงเวลาให้ภาพสลับกันทีละ 5 วินาที จนครบ 11 รูป */
         .slider-bg:nth-child(1) { animation-delay: 0s; }
         .slider-bg:nth-child(2) { animation-delay: 5s; }
         .slider-bg:nth-child(3) { animation-delay: 10s; }
+        .slider-bg:nth-child(4) { animation-delay: 15s; }
+        .slider-bg:nth-child(5) { animation-delay: 20s; }
+        .slider-bg:nth-child(6) { animation-delay: 25s; }
+        .slider-bg:nth-child(7) { animation-delay: 30s; }
+        .slider-bg:nth-child(8) { animation-delay: 35s; }
+        .slider-bg:nth-child(9) { animation-delay: 40s; }
+        .slider-bg:nth-child(10) { animation-delay: 45s; }
+        .slider-bg:nth-child(11) { animation-delay: 50s; }
 
-        /* เอฟเฟกต์เฟดเข้า-ออก และซูมช้าๆ */
+        /* เอฟเฟกต์เฟดเข้า-ออก สำหรับรอบ 55 วินาที */
         @keyframes kenburns {
             0% { opacity: 0; transform: scale(1); }
-            10% { opacity: 0.5; }
-            25% { opacity: 0.5; }
-            35% { opacity: 0; transform: scale(1.05); }
+            4% { opacity: 0.6; }
+            9% { opacity: 0.6; }
+            13% { opacity: 0; transform: scale(1.05); }
             100% { opacity: 0; transform: scale(1.05); }
         }
     </style>
@@ -89,7 +99,7 @@
             <div class="slider-bg" style="background-image: url('8DBA7F1A-DD70-4306-8F9B-A4D1B4CE84D5_1_105_c.jpeg');"></div>
             <div class="slider-bg" style="background-image: url('AFE3CC61-12D2-4BDF-A54B-85E4053A65E2.jpeg');"></div>
             <!-- แผ่นฟิล์มสีขาวทับบนรูป เพื่อให้ตัวหนังสืออ่านง่าย -->
-            <div class="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
         </div>
 
         <!-- เนื้อหาด้านหน้า (Hero Content) -->
